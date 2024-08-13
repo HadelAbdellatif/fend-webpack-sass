@@ -1,0 +1,32 @@
+// _variables.scss
+$border-color: green;
+$border-radius: 3px;
+$padding: 40px;
+$input-padding: 10px 20px;
+$input-width: 100%;
+$input-margin: 10px 0;
+$input-line-height: 16px;
+
+// _mixins.scss
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+form {
+  border: 5px solid $border-color;
+  @include border-radius($border-radius);
+  padding: $padding;
+
+  input {
+    padding: $input-padding;
+    width: $input-width;
+    line-height: $input-line-height;
+    margin: $input-margin;
+
+    // Additional feature: focus state
+    &:focus {
+      border-color: darken($border-color, 10%);
+      outline: none;
+    }
+  }
+}
